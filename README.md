@@ -30,11 +30,7 @@ Make sure you have the GitHub CLI installed and are authenticated (`gh auth logi
 
 [Termux](https://termux.dev/) is a terminal emulator for Android that lets you run a full Linux environment on your phone. With your paid GitHub account you can SSH into your Codespace directly from Termux.
 
-> **Already have `gh` installed?** Skip the install step and run:
-> ```bash
-> gh auth login
-> gh codespace ssh
-> ```
+> **Already have `gh` installed?** Skip the install step and jump to the [verbatim transcript](#verbatim-transcript---paste-this-directly-into-termux) below.
 
 ### 1. Install the GitHub CLI in Termux
 
@@ -62,3 +58,19 @@ gh codespace ssh -c <codespace-name>
 ```
 
 Replace `<codespace-name>` with the name shown by `gh codespace list`. If you only have one Codespace, `gh codespace ssh` will connect to it automatically.
+
+### Verbatim transcript - paste this directly into Termux
+
+Copy and run the block below exactly as shown. The first command lists your Codespaces so you can copy the name; the second connects you.
+
+```
+gh auth login
+gh codespace list
+gh codespace ssh
+```
+
+If you have more than one Codespace, use the name printed by `gh codespace list`:
+
+```
+gh codespace ssh -c YOUR_CODESPACE_NAME
+```
